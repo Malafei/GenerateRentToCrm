@@ -48,9 +48,9 @@ namespace TestGenerator
         {
             return new OptionSetValue(754300000 + random.Next(0, 3));
         }
-        public static OptionSetValue GetStatusState(OptionSetValue StatusReason)
+        public static OptionSetValue GetStatusState(OptionSetValue statusReason)
         {
-            if (StatusReason.Value <= 754300002)
+            if (statusReason.Value <= 754300002)
                 return new OptionSetValue(0);
             else
                 return new OptionSetValue(1);
@@ -71,10 +71,10 @@ namespace TestGenerator
                 return new OptionSetValue(754300000);
         }
 
-        public static bool GetRandomPaided(OptionSetValue StatusReason)
+        public static bool GetRandomPaided(OptionSetValue statusReason)
         {
             int tmp = random.Next(10001);
-            switch (StatusReason.Value)
+            switch (statusReason.Value)
             {
                 case 754300001:
                     if (tmp <= 9000)

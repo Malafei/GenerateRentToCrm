@@ -31,10 +31,12 @@ namespace TestGenerator
         {
             var carClassIds = new List<Guid>();
             var collection = EntityHelper.GetEntityCollection(service, "cds_carclass", "cds_carclassid");
+
             foreach (var item in collection.Entities)
             {
                 carClassIds.Add(item.Id);
             }
+
             Console.WriteLine("Get Data Carclass load");
             return carClassIds;
         }
@@ -55,7 +57,10 @@ namespace TestGenerator
         {
             EntityCollection collection = EntityHelper.GetEntityCollection(service, "cds_car", "cds_carid", "cds_carclassid");
             Console.WriteLine("Get Data Car load");
-            return collection.Entities.Select(x => new { CarId = x.Id, CarClassId = x.GetAttributeValue<EntityReference>("cds_carclassid").Id }).ToDictionary(x => x.CarId, x => x.CarClassId);
+            return collection.Entities.Select(x => new {
+                    CarId = x.Id, 
+                    CarClassId = x.GetAttributeValue<EntityReference>("cds_carclassid").Id })
+                .ToDictionary(x => x.CarId, x => x.CarClassId);
         }
         
         

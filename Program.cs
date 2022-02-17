@@ -17,7 +17,8 @@ namespace TestGenerator
 
         static void Main(string[] args)
         {
-            string connectionString = $"Connection String";
+            string connectionString = @"Конекшин";
+
             CrmServiceClient crmService = new CrmServiceClient(connectionString);
 
             List<Guid> guidsCarsClass = EntityHelper.GetEntityCarclass(crmService);
@@ -26,7 +27,7 @@ namespace TestGenerator
 
 
             //40000 - 32881 - 31000 - 28000 - 20000 - 15000 - 10000 - 7000 - 4000
-            for (int i = 0; i < 4000; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Guid guid = new Rent(guidsCarsClass, guidsCars, guidsContacts, crmService).PushRentToCrm(crmService);
 

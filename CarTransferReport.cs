@@ -9,12 +9,12 @@ namespace TestGenerator
 {
     public class CarTransferReport
     {
-        public Guid CarTransferReportId { get; set; }
-        public EntityReference CarId { get; set; }
-        public bool TypeReport { get; set; }
-        public bool IsDamages { get; set; }
-        public DateTime DateReport { get; set; }
-        public string DamageDesription { get; set; }
+        private Guid CarTransferReportId { get; set; }
+        private EntityReference CarId { get; set; }
+        private bool TypeReport { get; set; }
+        private bool IsDamages { get; set; }
+        private DateTime DateReport { get; set; }
+        private string DamageDesription { get; set; }
 
         public CarTransferReport(EntityReference referenceCar, bool typeReport, DateTime dateReport)
         {

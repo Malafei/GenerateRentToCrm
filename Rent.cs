@@ -9,21 +9,21 @@ namespace TestGenerator
 {
     public class Rent
     {
-        public DateTime Pickup { get; set; }
-        public DateTime Return { get; set; }
-        public EntityReference CarClass { get; set; }
-        public EntityReference Car { get; set; }
-        public EntityReference Contact { get; set; }
-        public OptionSetValue PickupLocation { get; set; }
-        public OptionSetValue ReturnLocation { get; set; }
-        public OptionSetValue StatusCode { get; set; }
-        public OptionSetValue StateCode { get; set; }
-        public Money Price { get; set; }
-        public bool Paid { get; set; }
-        public EntityReference CarTransferPickupReport { get; set; }
-        public EntityReference CarTransferReturnReport { get; set; }
+        private DateTime Pickup { get; set; }
+        private DateTime Return { get; set; }
+        private EntityReference CarClass { get; set; }
+        private EntityReference Car { get; set; }
+        private EntityReference Contact { get; set; }
+        private OptionSetValue PickupLocation { get; set; }
+        private OptionSetValue ReturnLocation { get; set; }
+        private OptionSetValue StatusCode { get; set; }
+        private OptionSetValue StateCode { get; set; }
+        private Money Price { get; set; }
+        private bool Paid { get; set; }
+        private EntityReference CarTransferPickupReport { get; set; }
+        private EntityReference CarTransferReturnReport { get; set; }
 
-        public CarTransferReport ReportToRent { get; set; }
+        private CarTransferReport ReportToRent { get; set; }
 
         public Rent(List<Guid> carsClass, Dictionary<Guid, Guid> cars, List<Guid> contacts, IOrganizationService service)
         {
